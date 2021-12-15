@@ -15,7 +15,9 @@ material
 notes.md
 venv*
 themes*
-.env
+*.env.prod.db*
+*.env.prod*
+*.env*
 references.md
 archive/*
 creds.md
