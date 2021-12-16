@@ -1,0 +1,10 @@
+version: '3'
+services:
+  nginx:
+    image: nginx:latest
+    container_name: ng
+    ports:
+      - "443:443"
+      - "8000:80"
+    volumes:
+      - ./config/:/etc/nginx/conf.d
