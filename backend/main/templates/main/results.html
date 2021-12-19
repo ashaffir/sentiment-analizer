@@ -1,0 +1,198 @@
+{% load static %}
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="author" content="colorlib.com">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,800" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="{% static 'css/main.css' %}" rel="stylesheet" />
+
+    <link rel="shortcut icon" href="{% static 'images/alarm.png' %}" type="image/x-icon">
+
+    <!-- Charts JS -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.6.2/dist/chart.min.js"></script>
+    <script src="https://use.fontawesome.com/d88301d9c6.js"></script>
+
+  </head>
+  <body>
+    <div class="s004">
+      <form action="" method="POST" enctype="multipart/form-data">
+          {% csrf_token %}
+        <fieldset>
+          <legend>Results</legend>
+          <div class="suggestion-wrap">
+            <a href="{% url 'main:home' %}"><span>Home <i class="fa fa-caret-right"></i></span></a>
+            <!-- <span>Ladies</span>
+            <span>Mens</span>
+            <span>Accessories</span>
+            <span>Sale</span> -->
+          </div>
+          <center>
+              <h1>Sentiment Score:
+                {% if data.sentiment.total > 0 %}
+                    <b class="text-success">
+                {% elif data.sentiment.total < 0 %}
+                    <b class="text-danger">
+                {% else %}
+                    <b>
+                {% endif %}
+                        {{ data.sentiment.total }}%
+                </b>
+              </h1>
+          </center>
+          <div class="row">
+              <div class="col-1 col-md-1">
+                  <h4>Link:</h4>
+              </div>
+              <div class="col-11 col-md-11">
+                  <a href="{{ data.url }}" target="_blank">
+                      {{ data.url }}
+                  </a>
+              </div>
+          </div>
+          <div class="row" >
+              <canvas id="myChart" width="50vw" height="30vh"></canvas>
+          </div>
+        </fieldset>
+        <hr>
+        <div class="row">
+            <div class="col-12 col-md-12">
+                <h3>Search Another</h3>
+            </div>
+        </div>
+        <div class="inner-form">
+            <div class="input-field">
+                <input name="input_url" class="input-url form-control" id="input_url" type="text" placeholder="Type to search..." required />
+                <button type="submit" class="btn-search">
+                <!-- <button type="button" onclick="calculateSentiment()" class="btn-search"> -->
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                    <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path>
+                  </svg>
+                </button>
+            </div>
+          </div>
+          {% for message in messages %}
+            <div class="row">
+              <div class="col-12 text-danger h4">
+                {{message}}
+              </div>
+            </div>
+          {% endfor %}
+
+    </form>
+    
+    </div>
+    
+    <script>
+    const ctx = document.getElementById('myChart').getContext('2d');
+    //Chart.defaults.font.size = 16;
+    const myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ["Positive", "Negative", "Neutral"],
+            datasets: [{
+                label: 'Sentiment Results',
+                data: [{{ data.sentiment.positive }}, {{ data.sentiment.negative }}, {{ data.sentiment.neutral }}],
+                backgroundColor: [
+                    'green',
+                    'red',
+                    'rgba(54, 162, 235, 1)',
+                ],
+                borderColor: [
+                    'green',
+                    'red',
+                    'rgba(54, 162, 235, 1)',
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+          plugins: {
+            legend: {
+              display: false,
+              labels: {
+                // This more specific font property overrides the global property
+                font: {
+                    size: 15
+                }
+              },
+            },
+              title: {
+                display: true,
+                text: 'Sentiment Summary',
+                font: {
+                  size: 25,
+                  color: "#fff"
+                }
+              }
+            },
+          scales: {
+            y: {
+              ticks: {
+                font: {
+                  size: 16,
+                  weight: "bold",
+                  family:'Helvetica'
+                },
+                color: "black",
+              }
+            },
+            x: {                
+              ticks: {
+                  font: {
+                    size: 26,
+                    family:'Helvetica'
+                  },
+                  color: "black",
+                }
+              }
+            }
+        }
+    });
+    </script>
+
+    <script src="{% static 'js/extention/choices.js' %}"></script>
+    <!-- <script>
+      var textPresetVal = new Choices('#input_url',
+      {
+        removeItemButton: true,
+      });
+
+    </script> -->
+    <!-- <script src="{% static 'js/main.js' %}"></script> -->
+    <script>
+      function calculateSentiment() {
+        url = document.getElementById("input_url");
+        check_sentiment_url = '{% url "main:home" %}';
+        var formData = new FormData();
+        formData.append('csrfmiddlewaretoken', '{{ csrf_token }}')
+        formData.append('input_url', url)
+    
+        $.ajax({
+            type: 'POST',
+            url: check_sentiment_url,
+            cache: false,
+            processData: false,
+            contentType: false,
+            data: formData,
+            enctype: 'multipart/form-data',
+            success: function (response) {
+                data = JSON.parse(JSON.stringify(response));
+                alert(`Result: ${data.pos}`);
+                //location.reload();
+            },
+            error: function (xhr, errmsg, err) {
+                console.log(`ERROR: ${err}. Message: ${errmsg}. XHR: ${xhr}`)
+                alert(`Failed calculation`)
+            }
+        })                
+    }
+    
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  </body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>

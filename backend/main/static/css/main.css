@@ -811,6 +811,7 @@ legend {
 }
 
 .s004 {
+  z-index: 1;
   min-height: 100vh;
   display: -ms-flexbox;
   display: flex;
@@ -819,12 +820,16 @@ legend {
   -ms-flex-align: center;
       align-items: center;
   font-family: 'Poppins', sans-serif;
-  background: url("../images/waves.jpeg");
+  /* background: url("../images/texture-01.jpeg"); */
+  background: url("../images/marble-bg-1.jpeg");
   background-size: cover;
   background-position: center center;
   padding: 15px;
 }
 
+.z004 .chart {
+  z-index: 5;
+}
 .s004 form {
   width: 100%;
   max-width: 790px;
@@ -832,7 +837,7 @@ legend {
 
 .s004 form legend {
   font-size: 36px;
-  color: #fff;
+  color: #000;
   font-weight: 800;
   text-align: center;
   margin-bottom: 50px;
@@ -848,6 +853,10 @@ legend {
   position: relative;
 }
 
+.s004 form .inner-form .input-field .input-url {
+  height: 6vh;
+  border-radius: 30px;
+}
 .s004 form .inner-form .input-field .choices {
   margin-bottom: 0;
 }
@@ -884,7 +893,7 @@ legend {
 .s004 form .inner-form .input-field .choices .choices__inner .choices__list .choices__item .choices__button {
   border-left: 0;
   color: #b2b2b2;
-  background-image: url(../images/icons/close.svg);
+  /* background-image: url(../images/icons/close.svg); */
   background-size: 14px auto;
   padding-left: 0;
   opacity: .3;
@@ -960,12 +969,13 @@ legend {
 }
 
 .s004 form .suggestion-wrap span {
-  font-size: 14px;
+  font-size: 18px;
+  font-weight: bold;
   font-family: 'Helvetica', sans-serif;
   display: inline-block;
   padding: 0 15px;
   line-height: 32px;
-  color: #fff;
+  color: rgb(52, 12, 126);
   border-radius: 16px;
   margin-right: 10px;
   margin-bottom: 10px;

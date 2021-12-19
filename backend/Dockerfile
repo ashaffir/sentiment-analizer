@@ -18,7 +18,7 @@ RUN apt-get update && \
 
 # lint
 RUN pip install --upgrade pip
-RUN pip install flake8==3.9.1
+# RUN pip install flake8==3.9.1
 COPY . /usr/src/app/
 # RUN flake8 --ignore=E501,F401 .
 
@@ -67,6 +67,12 @@ COPY . $APP_HOME
 # chown all the files to the app user
 RUN chown -R app:app $APP_HOME
 RUN chown -R app:app /vol/web
+
+# NLTK 
+ENV NLTK_DATA=/usr/local/nltk_data
+
+RUN [ "python", "-c", "import nltk; nltk.download('vader_lexicon', download_dir='/usr/local/nltk_data')" ]
+RUN chown -R app:app /usr/local/nltk_data
 
 # change to the app user
 USER app

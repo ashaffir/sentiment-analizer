@@ -1,3 +1,10 @@
 from django.contrib import admin
+from .models import SentimentCheck
 
-# Register your models here.
+
+@admin.register(SentimentCheck)
+class SentimentCheckAdmin(admin.ModelAdmin):
+    list_fields = (
+        "created",
+        "url",
+    )

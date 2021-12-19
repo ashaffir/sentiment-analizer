@@ -2,17 +2,18 @@ version: '3.9'
 
 services:
   backend:
+    container_name: backend
     build:
       context: ./backend
       dockerfile: Dockerfile
-    command: gunicorn --bind 0.0.0.0:443 backend:app
-    container_name: docker_testing
+    # command: gunicorn --bind 0.0.0.0:8000 backend:app
     restart: always
     volumes:
       - static_volume:/vol/web/static
       - media_volume:/vol/web/media
+      - ./nginx/config:/etc/certs
     expose:
-      - 443
+      - 8000
     env_file:
       - ./.env.prod
     depends_on:
@@ -27,15 +28,16 @@ services:
       - ./.env.prod.db
   
   nginx:
+    container_name: ng
     build: ./nginx
     restart: always
     volumes:
       - static_volume:/vol/web/static
       - media_volume:/vol/web/media
-
+      - ./config:/etc/nginx/conf.d
     ports:
       - 443:443
-      # - 80:80
+      - 1337:80
     depends_on:
       - backend
 
