@@ -37,7 +37,7 @@ services:
       - ./config:/etc/nginx/conf.d
     ports:
       - 443:443
-      - 1337:80
+      - 80:80
     depends_on:
       - backend
 
