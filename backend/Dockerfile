@@ -70,9 +70,11 @@ RUN chown -R app:app /vol/web
 
 # SSL
 RUN mkdir -p /etc/certs
+RUN mkdir -p /var/log/gunicorn
 # COPY ../nginx/config/localhost.crt /etc/certs
 # COPY ../nginx/config/localhost.key /etc/certs
 RUN chown -R app:app /etc/certs
+RUN chown -R app:app /var/log/gunicorn
 
 # NLTK 
 ENV NLTK_DATA=/usr/local/nltk_data
