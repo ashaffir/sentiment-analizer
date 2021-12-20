@@ -71,6 +71,8 @@ RUN chown -R app:app /vol/web
 # SSL
 RUN mkdir -p /etc/certs
 RUN mkdir -p /var/log/gunicorn
+RUN touch /var/log/gunicorn/gunicorn.log
+
 # COPY ../nginx/config/localhost.crt /etc/certs
 # COPY ../nginx/config/localhost.key /etc/certs
 RUN chown -R app:app /etc/certs
