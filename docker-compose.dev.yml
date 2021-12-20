@@ -6,16 +6,15 @@ services:
     build:
       context: ./backend
       dockerfile: Dockerfile
-    # command: gunicorn --bind 0.0.0.0:8000 backend:app
+    command: python manage.py runserver 0.0.0.0:8000
     restart: always
     volumes:
       - static_volume:/vol/web/static
       - media_volume:/vol/web/media
-      - ./nginx/config:/etc/certs
-    expose:
-      - 8000
+    ports:
+      - 8000:8000
     env_file:
-      - ./.env.prod
+      - ./.env.dev
     depends_on:
       - db
   
@@ -24,8 +23,7 @@ services:
     restart: always
     volumes:
       - postgres_data_prod:/var/lib/postgresql/data/
-    env_file:
-      - ./.env.prod.db
+      - ./.env.dev
   
   nginx:
     container_name: ng
@@ -36,8 +34,7 @@ services:
       - media_volume:/vol/web/media
       - ./config:/etc/nginx/conf.d
     ports:
-      - 443:443
-      - 80:80
+      - 8001:8000
     depends_on:
       - backend
 
