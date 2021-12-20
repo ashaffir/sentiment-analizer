@@ -68,6 +68,11 @@ COPY . $APP_HOME
 RUN chown -R app:app $APP_HOME
 RUN chown -R app:app /vol/web
 
+# SSL
+RUN mkdir -p /etc/certs
+RUN COPY ../nginx/config/* /etc/certs
+RUN chown -R app:app /etc/certs
+
 # NLTK 
 ENV NLTK_DATA=/usr/local/nltk_data
 
