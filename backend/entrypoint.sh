@@ -28,4 +28,4 @@ python manage.py collectstatic --no-input
 gunicorn --certfile=/etc/certs/localhost.crt --keyfile=/etc/certs/localhost.key backend.wsgi:application \
   --bind 0.0.0.0:443 \
   --log-level=debug \
-  --log-file=/home/ubuntu/logs/gunicorn.log
+  --log-file=/var/log/gunicorn/gunicorn.log
