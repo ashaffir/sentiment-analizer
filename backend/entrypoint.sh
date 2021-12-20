@@ -27,5 +27,6 @@ python manage.py collectstatic --no-input
 # gunicorn backend.wsgi:application --bind 0.0.0.0:8000
 gunicorn --certfile=/etc/certs/localhost.crt --keyfile=/etc/certs/localhost.key backend.wsgi:application \
   --bind 0.0.0.0:8000 \
+  --workers 3 \
   --log-level=debug \
   --log-file=/var/log/gunicorn/gunicorn.log
