@@ -138,6 +138,7 @@ env.bak/
 venv.bak/
 pythonenv*
 .env*
+set_env.sh
 
 # Spyder project settings
 .spyderproject
