@@ -34,7 +34,7 @@ services:
     volumes:
       - static_volume:/vol/web/static
       - media_volume:/vol/web/media
-      - ./config:/etc/nginx/conf.d
+      - ./nginx/config:/etc/nginx/conf.d
     ports:
       - 443:443
       - 80
