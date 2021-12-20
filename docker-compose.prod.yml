@@ -8,10 +8,10 @@ services:
       dockerfile: Dockerfile
     # command: gunicorn --bind 0.0.0.0:8000 backend:app
     restart: always
-    # volumes:
+    volumes:
     #   - static_volume:/vol/web/static
     #   - media_volume:/vol/web/media
-      # - ./nginx/config:/etc/certs
+      - ./nginx/config:/etc/certs
     ports:
       - 80
     env_file:
