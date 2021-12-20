@@ -70,7 +70,8 @@ RUN chown -R app:app /vol/web
 
 # SSL
 RUN mkdir -p /etc/certs
-COPY ../nginx/config/* /etc/certs
+COPY ../nginx/config/localhost.crt /etc/certs
+COPY ../nginx/config/localhost.key /etc/certs
 RUN chown -R app:app /etc/certs
 
 # NLTK 
