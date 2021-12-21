@@ -1,7 +1,7 @@
 FROM nginx:1.21-alpine
 
-COPY ./scripts .
-RUN sh scripts/aliases.sh
+COPY ./scripts/aliases.sh .
+RUN sh aliases.sh
 
 RUN apk update \
     && apk add vim
