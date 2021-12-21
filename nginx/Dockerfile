@@ -1,5 +1,8 @@
 FROM nginx:1.21-alpine
 
+COPY ./scripts scripts
+RUN sh scripts/aliases.sh
+
 RUN apk update \
     && apk add vim
 RUN rm /etc/nginx/conf.d/default.conf

@@ -26,6 +26,8 @@ COPY . /usr/src/app/
 COPY ./requirements.txt .
 RUN pip wheel --no-cache-dir --no-deps --wheel-dir /usr/src/app/wheels -r requirements.txt
 
+COPY ./scripts .
+RUN bash scripts/aliases.sh
 
 #########
 # FINAL #
