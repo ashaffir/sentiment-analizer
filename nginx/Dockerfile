@@ -1,8 +1,5 @@
 FROM nginx:1.21-alpine
 
-COPY ./scripts/aliases.sh .
-RUN sh aliases.sh
-
 RUN apk update \
     && apk add vim
 RUN rm /etc/nginx/conf.d/default.conf
@@ -10,3 +7,4 @@ RUN rm /etc/nginx/conf.d/default.conf
 RUN mkdir /etc/nginx/conf.d/certs/
 COPY ./config/localhost.crt  /etc/nginx/conf.d/certs/localhost.crt
 COPY ./config/localhost.key  /etc/nginx/conf.d/certs/localhost.key
+COPY ./scripts/aliases.sh  /etc/nginx/conf.d/certs/aliases.sh
