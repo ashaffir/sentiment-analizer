@@ -38,7 +38,7 @@ services:
       - ./nginx/config:/etc/nginx/conf.d/:ro
       - ./certbot/www:/var/www/certbot/:ro
     command: >
-      bash -c "cp ./certbot/conf/live/moodalarm.com/* /etc/nginx/ssl/live/moodalarm.com/ && 
+      sh -c "cp ./certbot/conf/live/moodalarm.com/* /etc/nginx/ssl/live/moodalarm.com/ && 
       cp ./certbot/conf/live/moodalarm.com/privkey.pem /etc/nginx/ssl/live/moodalarm.com/privkey.pem"
     ports:
       - 443:443
