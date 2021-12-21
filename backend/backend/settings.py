@@ -43,8 +43,8 @@ INSTALLED_APPS = [
 ]
 
 CSRF_TRUSTED_ORIGINS = [
-    "http://localhost:1337",
-    "http://127.0.0.1:1337",
+    "https://moodalarm.com",
+    "https://www.moodalarm.com",
 ]
 
 CORS_ALLOWED_ORIGINS = [
