@@ -37,9 +37,10 @@ services:
       - media_volume:/vol/web/media
       - ./nginx/config:/etc/nginx/conf.d/:ro
       - ./certbot/www:/var/www/certbot/:ro
+      - ./certbot/conf:/var/certs/:ro
     command: >
-      sh -c "cp ./certbot/conf/live/moodalarm.com/fullchain.pem /etc/nginx/ssl/live/moodalarm.com/fullchain.pem && 
-      cp ./certbot/conf/live/moodalarm.com/privkey.pem /etc/nginx/ssl/live/moodalarm.com/privkey.pem"
+      sh -c "cp /var/certs/live/moodalarm.com/fullchain.pem /etc/nginx/ssl/live/moodalarm.com/fullchain.pem && 
+      cp /var/certs/live/moodalarm.com/privkey.pem /etc/nginx/ssl/live/moodalarm.com/privkey.pem"
     ports:
       - 443:443
       - 80:80
