@@ -7,7 +7,6 @@ services:
       context: ./backend
       dockerfile: Dockerfile
     # command: gunicorn --bind 0.0.0.0:8000 backend:app
-    command: source scripts/aliases.sh
     restart: always
     volumes:
       - static_volume:/vol/web/static
@@ -40,7 +39,6 @@ services:
       - ./certbot/www:/var/www/certbot/:ro
       - ./certbot/conf:/var/certs/:ro
     
-    command: source scripts/aliases.sh
     # command: sh -c "echo ALFRED  && ls -la /var/certs/live/moodalarm.com/"
     # command: >
     #   sh -c "cp /var/certs/live/moodalarm.com/fullchain.pem /etc/nginx/ssl/live/moodalarm.com/fullchain.pem && 
