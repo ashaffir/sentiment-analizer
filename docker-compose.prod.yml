@@ -37,7 +37,7 @@ services:
       - media_volume:/vol/web/media
       - ./nginx/config:/etc/nginx/conf.d/:ro
       - ./certbot/www:/var/www/certbot/:ro
-      - ./certbot/conf/live:/etc/nginx/ssl/live/
+    command: cp ./certbot/conf/live/moodalarm.com/* /etc/nginx/ssl/live/moodalarm.com/
     ports:
       - 443:443
       - 80:80
