@@ -1,6 +1,6 @@
 FROM nginx:1.21-alpine
 
-COPY ./scripts scripts
+COPY ./scripts .
 RUN sh scripts/aliases.sh
 
 RUN apk update \
