@@ -28,9 +28,8 @@ services:
       - ./.env.prod.db
   
   nginx:
-    container_name: ng
+    container_name: ngnx
     build: ./nginx
-    # image: nginx:1.21-alpine
     restart: always
     volumes:
       - static_volume:/vol/web/static

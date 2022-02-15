@@ -1,0 +1,9 @@
+tweepy
+python-decouple
+fastapi
+uvicorn
+pymongo
+emoji
+google-api-python-client
+praw
+beautifulsoup4

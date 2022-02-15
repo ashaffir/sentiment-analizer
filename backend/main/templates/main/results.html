@@ -30,7 +30,7 @@
             <span>Sale</span> -->
           </div>
           <center>
-              <h1>Sentiment Score:
+              <h1> <b>{{ data.social_network }}</b> Sentiment Score:
                 {% if data.sentiment.total > 0 %}
                     <b class="text-success">
                 {% elif data.sentiment.total < 0 %}
@@ -43,10 +43,14 @@
               </h1>
           </center>
           <div class="row">
-              <div class="col-1 col-md-1">
-                  <h4>Link:</h4>
+              <div class="col-4 col-md-4">
+                  {% if data.social_network %}
+                    <h4>Messages count: {{ data.messages_count }}</h4>
+                  {% else %}
+                    <h4>Source: {{ data.source }} </h4>
+                  {% endif %}
               </div>
-              <div class="col-11 col-md-11">
+              <div class="col-8 col-md-8">
                   <a href="{{ data.url }}" target="_blank">
                       {{ data.url }}
                   </a>

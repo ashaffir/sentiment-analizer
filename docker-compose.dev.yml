@@ -1,44 +1,26 @@
-version: '3.9'
+version: '3.8'
 
 services:
-  backend:
-    container_name: backend
-    build:
+  web:
+    build: 
       context: ./backend
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile.dev
     command: python manage.py runserver 0.0.0.0:8000
-    restart: always
     volumes:
-      - static_volume:/vol/web/static
-      - media_volume:/vol/web/media
+      - ./backend:/usr/src/app/
     ports:
       - 8000:8000
     env_file:
       - ./.env.dev
-    depends_on:
-      - db
-  
+
   db:
-    image: postgres:12-alpine
-    restart: always
+    image: postgres:13.0-alpine
     volumes:
-      - postgres_data_prod:/var/lib/postgresql/data/
-      - ./.env.dev
-  
-  nginx:
-    container_name: ng
-    build: ./nginx
-    restart: always
-    volumes:
-      - static_volume:/vol/web/static
-      - media_volume:/vol/web/media
-      - ./config:/etc/nginx/conf.d
-    ports:
-      - 8001:8000
-    depends_on:
-      - backend
+      - postgres_data:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_USER=hello_django
+      - POSTGRES_PASSWORD=hello_django
+      - POSTGRES_DB=hello_django_dev
 
 volumes:
-  postgres_data_prod:
-  static_volume:
-  media_volume:
+  postgres_data:

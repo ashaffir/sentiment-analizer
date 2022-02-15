@@ -16,7 +16,10 @@ class SentimentCheck(models.Model):
     """Saving information about a URL request from the website"""
 
     created = models.DateTimeField(auto_now_add=True)
-    url = models.CharField(max_length=200)
+    url = models.CharField(max_length=200, null=True, blank=True)
+    query = models.CharField(max_length=50, null=True, blank=True)
+    messages_count = models.IntegerField(default=0)
+    source = models.CharField(max_length=30, null=True, blank=True)
     sentiment = models.JSONField(default=dict)
 
     class Meta:

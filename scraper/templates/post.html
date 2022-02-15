@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Posts
+{% endblock  %}
+{% block content %}
+    <h1>Edit Post {{ context.post.id }}</h1>
+    <hr>
+    <div class="row">
+        <div class="col-md-6">
+            <form action="{{ url_for('post', postId=context.post.id) }}" method="POST" enctype="multipart/form-data" class="form-group post-form">
+                <input type="text" name="title" class="form-control" value="{{ context.post.title}}">
+                <textarea type="text" name="content" class="form-control" placeholder="Content">{{ context.post.content }}</textarea>
+                <input type="text" name="author" class="form-control" value="{{ context.post.author }}">
+                <button class="btn btn-lg btn-success" type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+    <hr>
+   
+{% endblock content %}

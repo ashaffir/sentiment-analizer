@@ -1,0 +1,338 @@
+ {
+                "created_at": "Sat Jan 29 10:11:22 +0000 2022",
+                "id": 1487367757775925248,
+                "id_str": "1487367757775925248",
+                "full_text": "RT @MetaDogeBSC: Whale out 🐋 New buyers in 🚀\n\nWe are having a giveaway of a legendary and 2 epic baby nfts for the biggest 3 buys - ends at…",
+                "truncated": false,
+                "display_text_range": [
+                    0,
+                    140
+                ],
+                "entities": {
+                    "hashtags": [],
+                    "symbols": [],
+                    "user_mentions": [
+                        {
+                            "screen_name": "MetaDogeBSC",
+                            "name": "MetaDoge",
+                            "id": 1455152424411443204,
+                            "id_str": "1455152424411443204",
+                            "indices": [
+                                3,
+                                15
+                            ]
+                        }
+                    ],
+                    "urls": []
+                },
+                "metadata": {
+                    "iso_language_code": "en",
+                    "result_type": "recent"
+                },
+                "source": "<a href=\"http://twitter.com/download/android\" rel=\"nofollow\">Twitter for Android</a>",
+                "in_reply_to_status_id": null,
+                "in_reply_to_status_id_str": null,
+                "in_reply_to_user_id": null,
+                "in_reply_to_user_id_str": null,
+                "in_reply_to_screen_name": null,
+                "user": {
+                    "id": 1434465205577125893,
+                    "id_str": "1434465205577125893",
+                    "name": "nyaa🐶",
+                    "screen_name": "leejenongwinx_",
+                    "location": "",
+                    "description": "Lee Jeno Enthusiast 🍬🍭🍦🍾🍣 \nSorry for spaming giveaway💗🥺",
+                    "url": null,
+                    "entities": {
+                        "description": {
+                            "urls": []
+                        }
+                    },
+                    "protected": false,
+                    "followers_count": 315,
+                    "friends_count": 1408,
+                    "listed_count": 1,
+                    "created_at": "Sun Sep 05 10:35:39 +0000 2021",
+                    "favourites_count": 2460,
+                    "utc_offset": null,
+                    "time_zone": null,
+                    "geo_enabled": false,
+                    "verified": false,
+                    "statuses_count": 7431,
+                    "lang": null,
+                    "contributors_enabled": false,
+                    "is_translator": false,
+                    "is_translation_enabled": false,
+                    "profile_background_color": "F5F8FA",
+                    "profile_background_image_url": null,
+                    "profile_background_image_url_https": null,
+                    "profile_background_tile": false,
+                    "profile_image_url": "http://pbs.twimg.com/profile_images/1475238197231710209/_5G72OOL_normal.jpg",
+                    "profile_image_url_https": "https://pbs.twimg.com/profile_images/1475238197231710209/_5G72OOL_normal.jpg",
+                    "profile_banner_url": "https://pbs.twimg.com/profile_banners/1434465205577125893/1630838619",
+                    "profile_link_color": "1DA1F2",
+                    "profile_sidebar_border_color": "C0DEED",
+                    "profile_sidebar_fill_color": "DDEEF6",
+                    "profile_text_color": "333333",
+                    "profile_use_background_image": true,
+                    "has_extended_profile": true,
+                    "default_profile": true,
+                    "default_profile_image": false,
+                    "following": false,
+                    "follow_request_sent": false,
+                    "notifications": false,
+                    "translator_type": "none",
+                    "withheld_in_countries": []
+                },
+                "geo": null,
+                "coordinates": null,
+                "place": null,
+                "contributors": null,
+                "retweeted_status": {
+                    "created_at": "Wed Jan 19 07:56:39 +0000 2022",
+                    "id": 1483709980427567105,
+                    "id_str": "1483709980427567105",
+                    "full_text": "Whale out 🐋 New buyers in 🚀\n\nWe are having a giveaway of a legendary and 2 epic baby nfts for the biggest 3 buys - ends at 9pm UTC today🚀🤯🔥\n\nGiving away another 50 baby nfts to random buys over 200 USD. Winners announced on 24th January, 9pm UTC. #MetaDoge #Metaverse #nft https://t.co/iiTSrTm5nG",
+                    "truncated": false,
+                    "display_text_range": [
+                        0,
+                        272
+                    ],
+                    "entities": {
+                        "hashtags": [
+                            {
+                                "text": "MetaDoge",
+                                "indices": [
+                                    247,
+                                    256
+                                ]
+                            },
+                            {
+                                "text": "Metaverse",
+                                "indices": [
+                                    257,
+                                    267
+                                ]
+                            },
+                            {
+                                "text": "nft",
+                                "indices": [
+                                    268,
+                                    272
+                                ]
+                            }
+                        ],
+                        "symbols": [],
+                        "user_mentions": [],
+                        "urls": [],
+                        "media": [
+                            {
+                                "id": 1483709928372121604,
+                                "id_str": "1483709928372121604",
+                                "indices": [
+                                    273,
+                                    296
+                                ],
+                                "media_url": "http://pbs.twimg.com/ext_tw_video_thumb/1483709928372121604/pu/img/Lb8SuQJozT0CviKF.jpg",
+                                "media_url_https": "https://pbs.twimg.com/ext_tw_video_thumb/1483709928372121604/pu/img/Lb8SuQJozT0CviKF.jpg",
+                                "url": "https://t.co/iiTSrTm5nG",
+                                "display_url": "pic.twitter.com/iiTSrTm5nG",
+                                "expanded_url": "https://twitter.com/MetaDogeBSC/status/1483709980427567105/video/1",
+                                "type": "photo",
+                                "sizes": {
+                                    "thumb": {
+                                        "w": 150,
+                                        "h": 150,
+                                        "resize": "crop"
+                                    },
+                                    "small": {
+                                        "w": 544,
+                                        "h": 680,
+                                        "resize": "fit"
+                                    },
+                                    "medium": {
+                                        "w": 960,
+                                        "h": 1200,
+                                        "resize": "fit"
+                                    },
+                                    "large": {
+                                        "w": 1024,
+                                        "h": 1280,
+                                        "resize": "fit"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    "extended_entities": {
+                        "media": [
+                            {
+                                "id": 1483709928372121604,
+                                "id_str": "1483709928372121604",
+                                "indices": [
+                                    273,
+                                    296
+                                ],
+                                "media_url": "http://pbs.twimg.com/ext_tw_video_thumb/1483709928372121604/pu/img/Lb8SuQJozT0CviKF.jpg",
+                                "media_url_https": "https://pbs.twimg.com/ext_tw_video_thumb/1483709928372121604/pu/img/Lb8SuQJozT0CviKF.jpg",
+                                "url": "https://t.co/iiTSrTm5nG",
+                                "display_url": "pic.twitter.com/iiTSrTm5nG",
+                                "expanded_url": "https://twitter.com/MetaDogeBSC/status/1483709980427567105/video/1",
+                                "type": "video",
+                                "sizes": {
+                                    "thumb": {
+                                        "w": 150,
+                                        "h": 150,
+                                        "resize": "crop"
+                                    },
+                                    "small": {
+                                        "w": 544,
+                                        "h": 680,
+                                        "resize": "fit"
+                                    },
+                                    "medium": {
+                                        "w": 960,
+                                        "h": 1200,
+                                        "resize": "fit"
+                                    },
+                                    "large": {
+                                        "w": 1024,
+                                        "h": 1280,
+                                        "resize": "fit"
+                                    }
+                                },
+                                "video_info": {
+                                    "aspect_ratio": [
+                                        4,
+                                        5
+                                    ],
+                                    "duration_millis": 8021,
+                                    "variants": [
+                                        {
+                                            "content_type": "application/x-mpegURL",
+                                            "url": "https://video.twimg.com/ext_tw_video/1483709928372121604/pu/pl/93xnwcH1wipL9Tn7.m3u8?tag=12&container=fmp4"
+                                        },
+                                        {
+                                            "bitrate": 2176000,
+                                            "content_type": "video/mp4",
+                                            "url": "https://video.twimg.com/ext_tw_video/1483709928372121604/pu/vid/720x900/gl9YazBQyy_swo0-.mp4?tag=12"
+                                        },
+                                        {
+                                            "bitrate": 632000,
+                                            "content_type": "video/mp4",
+                                            "url": "https://video.twimg.com/ext_tw_video/1483709928372121604/pu/vid/320x400/VhiqVCM3RajsGcHp.mp4?tag=12"
+                                        },
+                                        {
+                                            "bitrate": 950000,
+                                            "content_type": "video/mp4",
+                                            "url": "https://video.twimg.com/ext_tw_video/1483709928372121604/pu/vid/480x600/dVKVcOZYiAnSy1nI.mp4?tag=12"
+                                        }
+                                    ]
+                                },
+                                "additional_media_info": {
+                                    "monetizable": false
+                                }
+                            }
+                        ]
+                    },
+                    "metadata": {
+                        "iso_language_code": "en",
+                        "result_type": "recent"
+                    },
+                    "source": "<a href=\"http://twitter.com/download/iphone\" rel=\"nofollow\">Twitter for iPhone</a>",
+                    "in_reply_to_status_id": null,
+                    "in_reply_to_status_id_str": null,
+                    "in_reply_to_user_id": null,
+                    "in_reply_to_user_id_str": null,
+                    "in_reply_to_screen_name": null,
+                    "user": {
+                        "id": 1455152424411443204,
+                        "id_str": "1455152424411443204",
+                        "name": "MetaDoge",
+                        "screen_name": "MetaDogeBSC",
+                        "location": "United Kingdom",
+                        "description": "Join Metadoge and his friends as they explore the metaverse together. TG:  https://t.co/iSECddPnCU… #metadoge #metadogebsc #metaverse",
+                        "url": "https://t.co/jSzsSihoGQ",
+                        "entities": {
+                            "url": {
+                                "urls": [
+                                    {
+                                        "url": "https://t.co/jSzsSihoGQ",
+                                        "expanded_url": "https://metadoge.live/",
+                                        "display_url": "metadoge.live",
+                                        "indices": [
+                                            0,
+                                            23
+                                        ]
+                                    }
+                                ]
+                            },
+                            "description": {
+                                "urls": [
+                                    {
+                                        "url": "https://t.co/iSECddPnCU",
+                                        "expanded_url": "http://t.me/MetaDoge_Offic",
+                                        "display_url": "t.me/MetaDoge_Offic",
+                                        "indices": [
+                                            75,
+                                            98
+                                        ]
+                                    }
+                                ]
+                            }
+                        },
+                        "protected": false,
+                        "followers_count": 19996,
+                        "friends_count": 650,
+                        "listed_count": 8,
+                        "created_at": "Mon Nov 01 12:40:20 +0000 2021",
+                        "favourites_count": 560,
+                        "utc_offset": null,
+                        "time_zone": null,
+                        "geo_enabled": false,
+                        "verified": false,
+                        "statuses_count": 198,
+                        "lang": null,
+                        "contributors_enabled": false,
+                        "is_translator": false,
+                        "is_translation_enabled": false,
+                        "profile_background_color": "F5F8FA",
+                        "profile_background_image_url": null,
+                        "profile_background_image_url_https": null,
+                        "profile_background_tile": false,
+                        "profile_image_url": "http://pbs.twimg.com/profile_images/1486658372342583300/Oo_-s2pn_normal.jpg",
+                        "profile_image_url_https": "https://pbs.twimg.com/profile_images/1486658372342583300/Oo_-s2pn_normal.jpg",
+                        "profile_banner_url": "https://pbs.twimg.com/profile_banners/1455152424411443204/1643281970",
+                        "profile_link_color": "1DA1F2",
+                        "profile_sidebar_border_color": "C0DEED",
+                        "profile_sidebar_fill_color": "DDEEF6",
+                        "profile_text_color": "333333",
+                        "profile_use_background_image": true,
+                        "has_extended_profile": false,
+                        "default_profile": true,
+                        "default_profile_image": false,
+                        "following": false,
+                        "follow_request_sent": false,
+                        "notifications": false,
+                        "translator_type": "none",
+                        "withheld_in_countries": []
+                    },
+                    "geo": null,
+                    "coordinates": null,
+                    "place": null,
+                    "contributors": null,
+                    "is_quote_status": false,
+                    "retweet_count": 466,
+                    "favorite_count": 260,
+                    "favorited": false,
+                    "retweeted": false,
+                    "possibly_sensitive": false,
+                    "lang": "en"
+                },
+                "is_quote_status": false,
+                "retweet_count": 466,
+                "favorite_count": 0,
+                "favorited": false,
+                "retweeted": false,
+                "lang": "en"
+            }
