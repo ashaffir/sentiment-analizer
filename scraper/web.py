@@ -10,12 +10,16 @@ Reference:
 https://stackoverflow.com/questions/37083058/programmatically-searching-google-in-python-using-custom-search
 
 """
+from pydantic import confloat
 from utils import blob_sentiment
+from dotenv import dotenv_values
 
 from googleapiclient.discovery import build
 
-GOOGLE_API_KEY = "AIzaSyBjss3d_7m6M_Xa43cy_TpgOscLAC6cG6g"  # The API_KEY you acquired
-GOOGLE_CSE_ID = "b9434f8f13b9da3d5"  # The search-engine-ID you created
+config = dotenv_values(".env")
+
+GOOGLE_API_KEY = config["GOOGLE_API_KEY"]
+GOOGLE_CSE_ID = config["GOOGLE_CSE_ID"]
 
 
 def google_search(search_term, api_key=GOOGLE_API_KEY, cse_id=GOOGLE_CSE_ID, **kwargs):
