@@ -7,3 +7,5 @@ emoji
 google-api-python-client
 praw
 beautifulsoup4
+python-dotenv
+nltk==3.6.5

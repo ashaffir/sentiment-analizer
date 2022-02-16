@@ -1,17 +1,33 @@
 # Video: https://www.youtube.com/watch?v=rE_bJl2GAY8&ab_channel=TechWithTim
-
+import os
+import platform
 from datetime import datetime
 from pymongo import MongoClient
 from pymongo.errors import ConnectionFailure
-
-import time
 from bson.objectid import ObjectId
 
-cluster = "mongodb://localhost:27017/?readPreference=primary&appname=MongoDB%20Compass&directConnection=true&ssl=false"
+from dotenv import dotenv_values
+
+if "LAPTOP" in str(platform.uname()):
+    cluster = "mongodb://localhost:27017"
+else:
+    cluster = (
+        "mongodb://"
+        + os.getenv("MONGODB_USERNAME")
+        + ":"
+        + os.getenv("MONGODB_PASSWORD")
+        + "@"
+        + os.getenv("MONGODB_HOSTNAME")
+        + ":27017"
+    )
+
 client = MongoClient(cluster)
 
 db = client.moodalarm
 twitter_collection = db.tweeter
+google_collection = db.google
+reddit_collection = db.reddit
+dailymotion_collection = db.dailymotion
 
 client = MongoClient()
 
@@ -24,12 +40,12 @@ def check_db_ready():
         raise "Server not available"
 
 
-post1 = {"_id": 3, "name": "dada", "content": "lorem ipsum sasasa kak"}
-post2 = {"_id": 4, "name": "era", "title": "lorem ipsum sasasa kak"}
+post1 = {"name": "dada", "content": "lorem ipsum sasasa kak"}
+post2 = {"name": "era", "title": "lorem ipsum sasasa kak"}
 
-# collection.insert_one(post1)
+twitter_collection.insert_one(post1)
 
-# collection.insert_many([post1, post2])
+# twitter_collection.insert_many([post1, post2])
 
 # result = twitter_collection.find({"name": "gaga"})
 # print(f"{[x for x in result]}")

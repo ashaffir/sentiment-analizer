@@ -1,9 +1,9 @@
 from datetime import datetime
-from email import message
 
 from fastapi import FastAPI, status
 
-from db import twitter_collection
+import db.db_init
+
 import twitter
 from models import TwitterQuery
 from utils import logger, calculate_total_sentiment
@@ -13,6 +13,8 @@ import reddit
 
 app = FastAPI()
 
+twitter_collection = db.db_init.twitter_collection
+
 # Home/welcome route
 @app.get("/")
 def read_root():
@@ -20,7 +22,7 @@ def read_root():
 
 
 # get single tweeter user
-@app.post("/twitter/track_username/{username}", status_code=201)
+@app.post("/twitter/track_username/{username}", status_code=status.HTTP_201_CREATED)
 async def get_user(username: str):
     """Getting Twitter user using username
 
