@@ -12,7 +12,7 @@ from .models import SentimentCheck
 
 logger = logging.getLogger(__file__)
 
-SCRAPER_API_URL = "http://localhost:8222"
+SCRAPER_API_URL = "http://scraper:8222"
 
 
 class HomeView(TemplateView):
