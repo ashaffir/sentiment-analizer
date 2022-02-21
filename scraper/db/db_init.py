@@ -5,11 +5,16 @@ from datetime import datetime
 from pymongo import MongoClient
 from pymongo.errors import ConnectionFailure
 from bson.objectid import ObjectId
+import urllib.parse
 
-from dotenv import dotenv_values
+if "alfred-linux-ubuntu" in str(platform.uname()):
+    username = urllib.parse.quote_plus(os.getenv("MONGO_REMOTE_USERNAME"))
+    password = urllib.parse.quote_plus(os.getenv("MONGO_REMOTE_PASSWORD"))
 
-if "LAPTOP" in str(platform.uname()):
-    cluster = "mongodb://localhost:27017"
+    # Access: https://cloud.mongodb.com/v2/61e5da26dc2df969bee3c620#clusters  => alfreds@atappon.com / google login
+    cluster = f"mongodb+srv://{username}:{password}@cluster0.eoafk.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+
+    # cluster = "mongodb://localhost:27017"
 else:
     cluster = (
         "mongodb://"
@@ -29,7 +34,7 @@ google_collection = db.google
 reddit_collection = db.reddit
 dailymotion_collection = db.dailymotion
 
-client = MongoClient()
+# client = MongoClient()
 
 
 def check_db_ready():

@@ -2,7 +2,7 @@ from datetime import datetime
 
 from fastapi import FastAPI, status
 
-import db.db_init
+from db import db_init
 
 import twitter
 from models import TwitterQuery
@@ -13,7 +13,7 @@ import reddit
 
 app = FastAPI()
 
-twitter_collection = db.db_init.twitter_collection
+twitter_collection = db_init.twitter_collection
 
 # Home/welcome route
 @app.get("/")

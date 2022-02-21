@@ -1,9 +1,4 @@
-from cmath import log
-import imp
-from itertools import count
-from re import search
 import time
-from unittest import result
 import tweepy  # https://docs.tweepy.org/en/stable/
 from decouple import config
 from utils import logger
@@ -14,7 +9,7 @@ access_token = config("TWITTER_ACCESS_TOKEN")
 access_token_secret = config("TWITTER_ACCESS_TOKEN_SECRET")
 bearer_token = config("TWITTER_BEARER_TOKEN")
 
-auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
+auth = tweepy.OAuth1UserHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
 
 api = tweepy.API(auth)
